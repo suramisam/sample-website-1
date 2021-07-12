@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="nav-footer-style.css"/>
     <link rel="stylesheet" href="registration-style.css"/>
     <link
       rel="stylesheet"
@@ -55,7 +54,7 @@
               <div class="registration-left"></div>
               <div class="registration-right">
                 <h1 class="registration-heading">Registration Form</h1>
-                <form action="index.php">
+                <form action="index.php" method= "POST">
                   <div class="input-group">
                     <input type="text" name="FirstName" id="FirstName" class="field" />
                     <label for="FirstName" class="input-label">First Name</label>
@@ -86,7 +85,7 @@
                     <label for="address" class="message">Address</label>
                   </div>
                   <div class="input-group">
-                    <input type="tel" id="contactNo" name="contactNo" class="field" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"" required />
+                    <input type="tel" id="contactNo" name="contactNo" class="field" pattern="[0-9]{10}" required />
                     <label for="contactNo" class="input-label">contact Number</label>
                   </div>
                   <input type="submit" class="submit-btn" value="Submit" />
@@ -94,54 +93,18 @@
               </div>
             </div>
         </section>
-    </div>
-    <div class="footer">
-      <div class="container-footer">
-        <div class="footer_content">
-          <div class="footer-col-1">
-            <h3>Download Our App</h3>
-            <p>Download App for Android and ios mobile phone.</p>
-            <div class="app-logo">
-              <img src="images/play-store.png">
-              <img src="images/app-store.png">
+        <footer class="footer">
+          <div class="footer-content">
+            <p class="copyright">
+              Copyright &copy; 2020, CodeAndCreate - All Rights Reserved
+            </p>
+            <div class="social-list">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
           </div>
-          <div class="footer-col-2">
-            <img src="images/IIT logo.jpg">
-            <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to the many. </p>
-          </div>
-  
-          <div class="footer-col-3">
-            <h3>IIT</h3>
-            <ul>
-              <li><a href="home.html">Home</a></li>
-                          <li><a href="about us.html">About Us</a></li>
-                          <li><a href="#">Team</a></li>
-                          <li><a href="#">Registration</a></li>
-                          <li><a href="contact.html">Contact Us</a></li>
-  
-            </ul>
-          </div>
-          <div class="footer-col-3">
-            <h3>Help & Support</h3>
-            <ul>
-              <li>Frequently Asked Questions</li>
-              <li>Shipping</li>
-              <li>Return An Item</li>
-              <li>Track Order</li>
-            </ul>
-          </div>
-          
-        </div>
-        <br>
-        <div class="social-list">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-        <hr>
-        <p class="copyright">Copyright 2021 - IIT Coursework Group</p>
-      </div>
+        </footer>  
     </div>
     <script>
         (function(){
