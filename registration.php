@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,19 +27,19 @@
         <section class="sidebar">
             <ul class="menu">
               <li class="menu-item">
-                <a href="home.html" class="menu-link" data-content="Home">Home</a>
+                <a href="home.php" class="menu-link" data-content="Home">Home</a>
               </li>
               <li class="menu-item">
-                <a href="about us.html" class="menu-link" data-content="About Us">About Us</a>
+                <a href="about us.php" class="menu-link" data-content="About Us">About Us</a>
               </li>
               <li class="menu-item">
-                <a href="contact.html" class="menu-link" data-content="Contact">Contact</a>
+                <a href="contact.php" class="menu-link" data-content="Contact">Contact</a>
               </li>
               <li class="menu-item">
-                <a href="registration.html" class="menu-link" data-content="Registration">Registration</a>
+                <a href="registration.php" class="menu-link" data-content="Registration">Registration</a>
               </li>
               <li class="menu-item">
-                <a href="datatable.html" class="menu-link" data-content="Data Table">Data Table</a>
+                <a href="datatable.php" class="menu-link" data-content="Data Table">Data Table</a>
               </li>
             </ul>
             <div class="social-media">
@@ -115,4 +114,3 @@
     <script src="script.js"></script>
 </body>
 </html>        
-        

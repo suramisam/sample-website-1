@@ -19,11 +19,11 @@ $conn = new mysqli($servername, $username, $password,"institute","3307");
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
+
 $sql = "INSERT INTO registration (first_name, last_name, gender,dob,email,address,contact_number) VALUES ('".$firstName."', '".$lastName."', '".$gender."', '".$dob."','".$email."','".$address."','".$contactNo."')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  //echo "New record created successfully";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -34,3 +34,4 @@ $conn->close();
 $variableee = readfile("registration.html");
 echo $variableee;
 ?>
+

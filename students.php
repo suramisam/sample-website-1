@@ -4,14 +4,14 @@ $username = "root";
 $password = "surami";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,"school","3307");
+$conn = new mysqli($servername, $username, $password,"institute","3307");
 
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully<br>";
-$sql = "SELECT * FROM student";
+$sql = "SELECT * FROM registration";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
