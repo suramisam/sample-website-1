@@ -11,20 +11,18 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['password'])){
 	if(mysqli_num_rows($qr)>0){
 		$data=mysqli_fetch_assoc($qr);
 		$_SESSION['user_data']=$data;
-		if($data['usertypes']==1){
+		if($data['usertype']==1){
 			header("Location:teacher_home.php");	
 		}
-		elseif($data['usertypes']==2){
+		else{
 			header("Location:student_home.php");
-		}else{
-			header("Location:index-login.php?error=Not activated user Type");	
 		}
 
 	}
 	else{
-		header("Location:index-login.php?error=Invalid Login Details");		
+		header("Location:index.php?error=Invalid Login Details");		
 	}
 }
 else{
-	header("Location:index-login.php?error=Please Enter Email and Password");
+	header("Location:index.php?error=Please Enter Email and Password");
 }

@@ -2,12 +2,12 @@
 session_start();
 include 'connect.php';
 if(isset($_SESSION['user_data'])){
-	if($_SESSION['user_data']['usertypes']!=1){
+	if($_SESSION['user_data']['usertype']!=1){
 		header("Location:student_home.php");
 	}
 
 	$data=array();
-	$qr=mysqli_query($con,"select * from users where usertypes='2'");
+	$qr=mysqli_query($con,"select * from users where usertype='2'");
 	while($row=mysqli_fetch_assoc($qr)){
 		array_push($data,$row);
 	}
@@ -72,17 +72,11 @@ if(isset($_SESSION['user_data'])){
 		    }
 		?>
     </table>
-    <div class="row">
-    <ul>
-        <li><button class="register">REGISTER NOW</button></li>
-        <li><button class="login">LOG IN</button></li>
-  </ul>
-	</div>
 </div>
 </body>
 </html>
 <?php
 }
 else{
-	header("Location:index-login.php?error=UnAuthorized Access");
+	header("Location:index.php?error=UnAuthorized Access");
 }
