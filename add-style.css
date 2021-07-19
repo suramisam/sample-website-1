@@ -1,0 +1,150 @@
+a{
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Muli", serif;
+   
+  }
+  
+  nav li {
+   float: left;
+   margin-right: 10px;
+   margin-top: 10px;
+   
+  
+  }
+  
+  nav li a {
+    display: block;
+    color: white;
+    background-color: #e2b646;
+     font-size: 12px;
+    text-align: center;
+    padding: 8px 25px;
+    position: fixed;
+    top: 5rem;
+    left: 5rem;
+    z-index: 200;
+    text-decoration: none;
+  
+  }
+  
+  nav li a:hover, nav .active {
+    background-color: #F5FFFA;
+    color: black;
+  }
+  
+  nav ul{
+    list-style-type: none;
+  }
+.add {
+    width: 100%;
+    height: 100vh;
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .add-wrapper {
+    width: 60%;
+    height: 75rem;
+    display: flex;
+    box-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.5);
+  }
+  
+  .add-left {
+    width: 35%;
+    background: linear-gradient(rgba(15, 15, 15, 0.2), rgba(22, 22, 22, 0.2)),
+      url(images/contact-bg.jpg) center no-repeat;
+    background-size: cover;
+  }
+  
+  .add-right {
+    width: 65%;
+    background-color: #eee;
+    padding: 3rem 10rem 10rem 10rem;
+  }
+  
+  .add-heading {
+    font-family: "Baloo Da 2", serif;
+    font-size: 6rem;
+    font-weight: 300;
+    color: #272727;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+  
+  .add-right form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-group {
+    position: relative;
+  }
+  
+  .field {
+    width: 45rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.2rem dashed #636363;
+    margin: 3rem 0;
+    padding: 1rem 1rem 1rem 0;
+    font-family: "Muli", serif;
+    font-size: 1.4rem;
+    color: #4b4b4b;
+  }
+  
+  .input-group input {
+    height: 4rem;
+  }
+  
+  .input-group textarea {
+    max-height: 7rem;
+    max-width: 45rem;
+  }
+  
+  .field:focus {
+    border-bottom-style: solid;
+  }
+  
+  .input-group label {
+    position: absolute;
+    left: 0;
+    font-family: "Baloo Da 2", serif;
+    padding: 5rem 5rem 5rem 0;
+    font-size: 1.8rem;
+    color: #4b4b4b;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+  
+  .input-label {
+    bottom: 3rem;
+  }
+  
+  
+  .field:focus ~ label {
+    transform: translateY(-3rem);
+    font-size: 1.2rem;
+  }
+  
+  .submit-btn {
+    width: 45rem;
+    height: 5rem;
+    background-color: #c29525;
+    color: #fff;
+    border: none;
+    margin-top: 2rem;
+    font-family: "Muli", serif;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+  }

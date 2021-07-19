@@ -66,18 +66,19 @@ if(isset($_SESSION['user_data'])){
             <td><?php echo $d['id']; ?></td>
             <td><?php echo $d['name']; ?></td>
             <td><?php echo $d['email']; ?></td>
-            <td><button><a class="btn btn-info" href="edit_result.php?id=<?php echo $d['id']; ?>">Edit Result</a></button></td>
+            <td><li><a class="tab" href="edit_result.php?id=<?php echo $d['id']; ?>"><i class="fa fa-pencil-alt"></i>Edit Result</a></li></td>
         </tr>
         <?php
 		    }
 		?>
     </table>
-    <div class="row">
-    <ul>
-        <li><button class="register">REGISTER NOW</button></li>
-        <li><button class="login">LOG IN</button></li>
-  </ul>
-	</div>
+    <nav >
+        <ul>
+            <li><a class="tab" href="add_student.php"><i class="fa fa-user-plus"></i>Add Student</a></li>
+            <li style="float: right" ><a  class="tab" href="logout.php"><i class="fa fa-user"></i> logout</a></li>
+            
+        </ul>
+    </nav >
 </div>
 </body>
 </html>

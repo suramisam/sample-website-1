@@ -22,10 +22,11 @@ th, td {
 }
 
 table {
+    font-size: 12px;
     background-color: #fff;
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 35%;
     transform: translate(-50%, -50%);
     width: 750px;
     height: 150px;
@@ -40,55 +41,66 @@ table,th,td {
 }
 
 #header {
+    font-size: 15px;
     background-color: #e2b646;
     color: #fff;
 }
 
-.register {
-    margin: 20px auto;
-    display: block;
-    width: 180px;
-    height: 50px;
-    border: 3px solid white;
-    background-color: rgba(255, 255, 255, 0);
-    color: white;
-    font-family: sans-serif;
-    font-weight: bold;
-    border-radius: 5px;
-    float: left;
-    transition: background-color 1000ms, color 1000ms;
-  }
-  
-  .register:hover {
-    background-color: rgba(255, 255, 255, 1);
-    color: #222;
-    cursor: pointer;
-    transition: background-color 1000ms, color 1000ms;
-  }
-  
-  .login {
-    margin: 20px auto;
-    display: block;
-    width: 180px;
-    height: 50px;
-    border: 3px solid white;
-    background-color: rgba(255, 255, 255, 0);
-    color: white;
-    font-family: sans-serif;
-    font-weight: bold;
-    border-radius: 5px;
-    float: right;
-    transition: background-color 1000ms, color 1000ms;
-  }
-  
-  .login:hover {
-    background-color: rgba(255, 255, 255, 1);
-    color: #222;
-    cursor: pointer;
-    transition: background-color 1000ms, color 1000ms;
-  }
-  
-  ul {
-    list-style: none;
-  }
-   ul li {display: inline}
+a{
+
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Muli", serif;
+ 
+}
+
+nav li {
+ float: left;
+ background-color: #e2b646;
+ font-size: 12px;
+ margin-right: 10px;
+ margin-top: 15px;
+
+
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 8px 25px;
+  text-decoration: none;
+
+}
+
+nav li a:hover, nav .active {
+  background-color: #F5FFFA;
+  color: black;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+td li {
+  float: left;
+  background-color: #e2b646;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-top: 15px;
+ 
+ }
+ 
+ td li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 8px 25px;
+   text-decoration: none;
+ 
+ }
+ 
+ td li a:hover, td .active {
+   background-color: #000;
+   color: #fff;
+ }

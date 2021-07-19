@@ -2,23 +2,31 @@
 session_start();
 include 'connect.php';
 if(isset($_SESSION['user_data'])){
-	if($_SESSION['user_data']['usertype']!=1){
+	if($_SESSION['user_data']['usertypes']!=1){
 		header("Location:student_home.php");
 	}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Add Student</title>
-	<?php include 'css.php'; ?>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="add-style.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,400;0,600;1,300;1,400;1,600&family=Muli:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-	<form action="add_student_post.php" method="post">
-	<div class="container">
-		<div class="row">
-			<a href="index.php" class="btn btn-success" style="margin:10px;">Home</a>
-		</div>
-		<div class="row">
+    <div class="container">
+	<div class="row">
    		<?php if(isset($_REQUEST['error'])){ ?>
    		<div class="col-lg-12">
    			<span class="alert alert-danger" style="display: block;"><?php echo $_REQUEST['error']; ?></span>
@@ -32,35 +40,85 @@ if(isset($_SESSION['user_data'])){
    		</div>
 	   	<?php } ?>
 	   	</div>
-		<div class="row">
-			<h2 style="margin:15px;" class="text-center">Add Student</h2>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 form-group">
-				<input type="text" name="name" placeholder="Name" required="required" class="form-control">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 form-group">
-				<input type="email" name="email" placeholder="Email" required="required" class="form-control">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 form-group">
-				<input type="password" name="password" placeholder="Password" required="required" class="form-control">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 form-group">
-				<button type="submit" class="btn btn-success btn-block"> Add Student</button>
-			</div>
-		</div>
-	</div>
-	</form>
+        <div class="hamburger-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+            <span>Close</span>
+        </div>    
+        <section class="sidebar">
+            <ul class="menu">
+              <li class="menu-item">
+                <a href="home.php" class="menu-link" data-content="Home">Home</a>
+              </li>
+              <li class="menu-item">
+                <a href="about us.php" class="menu-link" data-content="About Us">About Us</a>
+              </li>
+              <li class="menu-item">
+                <a href="contact.php" class="menu-link" data-content="Contact">Contact</a>
+              </li>
+              <li class="menu-item">
+                <a href="registration.php" class="menu-link" data-content="Registration">Registration</a>
+              </li>
+              <li class="menu-item">
+                <a href="registration-form.php" class="menu-link" data-content="Data Table">Data Table</a>
+              </li>
+            </ul>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a> 
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>  
+            </div> 
+			  
+        </section>
+        
+        <section class="add">
+            <div class="add-wrapper">
+				<nav >
+					<ul>
+						<li><a class="tab" href="index-login.php"><i class="fa fa-user"></i>login</a></li>
+					</ul>		
+				</nav >
+            <div class="add-left"></div>
+            <div class="add-right">
+                <h1 class="add-heading">Add Student</h1>
+                <form action="add_student_post.php" method="post">
+                  <div class="input-group">
+                    <input type="text" name="name" required="required" class="field" />
+                    <label class="input-label">Full Name</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="email" name="email" required="required" class="field" />
+                    <label class="input-label">Email</label>
+                  </div>
+                  <div class="input-group">
+                    <input type="password" name="password" required="required" class="field" />
+                    <label class="input-label">Password</label>
+                  </div>
+                  <input type="submit" class="submit-btn" value="Add Student" />
+                </form>
+              </div>
+            </div>
+        </section>
+        <footer class="footer">
+          <div class="footer-content">
+            <p class="copyright">
+              Copyright &copy; 2020, CodeAndCreate - All Rights Reserved
+            </p>
+            <div class="social-list">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
-</html>
+</html>      
+        
 <?php
 }
 else{
-	header("Location:index.php?error=UnAuthorized Access");
+	header("Location:index-login.php?error=UnAuthorized Access");
 }

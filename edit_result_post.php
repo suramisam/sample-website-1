@@ -2,7 +2,7 @@
 session_start();
 include 'connect.php';
 if(isset($_SESSION['user_data'])){
-	if($_SESSION['user_data']['usertype']!=1){
+	if($_SESSION['user_data']['usertypes']!=1){
 		header("Location:student_home.php");
 	}
 	if(!isset($_REQUEST['student_id'])){
@@ -25,6 +25,6 @@ if(isset($_SESSION['user_data'])){
 <?php
 }
 else{
-	header("Location:index.php?error=UnAuthorized Access");
+	header("Location:index-login.php?error=UnAuthorized Access");
 }
 //teacher part complete now student view the result;
