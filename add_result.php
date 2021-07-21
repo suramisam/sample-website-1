@@ -5,6 +5,23 @@ if(isset($_SESSION['user_data'])){
 	if($_SESSION['user_data']['usertypes']!=1){
 		header("Location:student_home.php");
 	}
+	if(!isset($_REQUEST['id'])){
+		header("Location:teacher_home.php?error=Please Enter ID");
+	} 
+	$qr=mysqli_query($con,"select * from users where id='".$_REQUEST['id']."'");
+	if(mysqli_num_rows($qr)==0){
+		header("Location:teacher_home.php?error=Student ID Not Found");	
+	}
+	$result_qr=mysqli_query($con,"select * from results where student_id='".$_REQUEST['id']."'");
+	if(mysqli_num_rows($result_qr)>0){
+		header("Location:teacher_home.php?error=Student Result Already Exist");	
+	}
+	$subjects=array();
+	$subject_qr=mysqli_query($con,"select * from subjects");
+	while($row=mysqli_fetch_assoc($subject_qr)){
+		array_push($subjects,$row);
+	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +31,7 @@ if(isset($_SESSION['user_data'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="add-style.css"/>
+    <link rel="stylesheet" href="add_results-style.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
@@ -26,20 +43,6 @@ if(isset($_SESSION['user_data'])){
 </head>
 <body>
     <div class="container">
-	<div class="row">
-   		<?php if(isset($_REQUEST['error'])){ ?>
-   		<div class="col-lg-12">
-   			<span class="alert alert-danger" style="display: block;"><?php echo $_REQUEST['error']; ?></span>
-   		</div>
-	   	<?php } ?>
-	   	</div>
-	   	<div class="row">
-   		<?php if(isset($_REQUEST['success'])){ ?>
-   		<div class="col-lg-12">
-   			<span class="alert alert-success" style="display: block;"><?php echo $_REQUEST['success']; ?></span>
-   		</div>
-	   	<?php } ?>
-	   	</div>
         <div class="hamburger-menu">
             <div class="line line-1"></div>
             <div class="line line-2"></div>
@@ -68,34 +71,30 @@ if(isset($_SESSION['user_data'])){
                 <a href="#"><i class="fab fa-facebook-f"></i></a> 
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>  
-            </div> 
-			  
+            </div>   
         </section>
         
-        <section class="add">
-            <div class="add-wrapper">
-              <nav >
-                <ul>
-                  <li><a class="tab" href="index-login.php"><i class="fa fa-user"></i>logout</a></li>
-                </ul>		
-              </nav >
-            <div class="add-left"></div>
-            <div class="add-right">
-                <h1 class="add-heading">Add Student</h1>
-                <form action="add_student_post.php" method="post">
+        <section class="add_result">
+            <div class="add_result-wrapper">
+				<nav >
+					<ul>
+						<li><a class="tab" href="teacher_home.php"><i class="fa fa-user"></i>Add Student</a></li>
+					</ul>		
+              	</nav >
+              <div class="add_result-left"></div>
+              <div class="add_result-right">
+                <h1 class="add_result-heading">Add Results</h1>
+                <form action="add_result_post.php" method="post" >
+                <input type="hidden" name="student_id" value="<?php echo $_REQUEST['id']; ?>">
+                <?php foreach($subjects as $subject)  { ?>
                   <div class="input-group">
-                    <input type="text" name="name" required="required" class="field" />
-                    <label class="input-label">Full Name</label>
+                    <label class="input-label"><?php echo $subject['subject_name']; ?></label>
+                    <input type="hidden" name="id[]" value="<?php echo $subject['id']; ?>">
+                    <input type="text" name="marks[]" class="field" placeholder="Add Marks"> 	  
                   </div>
-                  <div class="input-group">
-                    <input type="email" name="email" required="required" class="field" />
-                    <label class="input-label">Email</label>
-                  </div>
-                  <div class="input-group">
-                    <input type="password" name="password" required="required" class="field" />
-                    <label class="input-label">Password</label>
-                  </div>
-                  <input type="submit" class="submit-btn" value="Add Student" />
+                <?php } ?>
+                  
+                  	<input type="submit" class="submit-btn" value="Add Result" />
                 </form>
               </div>
             </div>
@@ -116,7 +115,6 @@ if(isset($_SESSION['user_data'])){
     <script src="script.js"></script>
 </body>
 </html>      
-        
 <?php
 }
 else{

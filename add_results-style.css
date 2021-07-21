@@ -3,17 +3,16 @@ a{
     list-style-type: none;
     font-family: "Muli", serif;
    
-  }
+}
   
-  nav li {
-   float: left;
-   margin-right: 10px;
-   margin-top: 10px;
-   
+nav li {
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
   
-  }
+} 
   
-  nav li a {
+nav li a {
     display: block;
     color: white;
     background-color: #e0ac28;
@@ -26,17 +25,18 @@ a{
     z-index: 200;
     text-decoration: none;
   
-  }
+} 
   
-  nav li a:hover, nav .active {
+nav li a:hover, nav .active {
     background-color: #F5FFFA;
     color: black;
-  }
+}
   
-  nav ul{
+nav ul{
     list-style-type: none;
-  }
-.add {
+}
+
+.add_result {
     width: 100%;
     height: 100vh;
     background-color: #272727;
@@ -45,27 +45,27 @@ a{
     align-items: center;
   }
   
-  .add-wrapper {
+  .add_result-wrapper {
     width: 60%;
-    height: 75rem;
+    height: 85rem;
     display: flex;
     box-shadow: 0 3rem 7rem rgba(0, 0, 0, 0.5);
   }
   
-  .add-left {
+  .add_result-left {
     width: 35%;
     background: linear-gradient(rgba(15, 15, 15, 0.2), rgba(22, 22, 22, 0.2)),
       url(images/contact-bg.jpg) center no-repeat;
     background-size: cover;
   }
   
-  .add-right {
+  .add_result-right {
     width: 65%;
     background-color: #eee;
     padding: 3rem 10rem 10rem 10rem;
   }
   
-  .add-heading {
+  .add_result-heading {
     font-family: "Baloo Da 2", serif;
     font-size: 6rem;
     font-weight: 300;
@@ -74,7 +74,7 @@ a{
     text-align: center;
   }
   
-  .add-right form {
+  .add_result-right form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -89,7 +89,7 @@ a{
     width: 45rem;
     background-color: transparent;
     border: none;
-    border-bottom: 0.2rem dashed #636363;
+    border-collapse: 0.2rem dashed #636363;
     margin: 3rem 0;
     padding: 1rem 1rem 1rem 0;
     font-family: "Muli", serif;
@@ -99,11 +99,6 @@ a{
   
   .input-group input {
     height: 4rem;
-  }
-  
-  .input-group textarea {
-    max-height: 7rem;
-    max-width: 45rem;
   }
   
   .field:focus {
@@ -126,6 +121,9 @@ a{
     bottom: 3rem;
   }
   
+  .message {
+    bottom: 5rem;
+  }
   
   .field:focus ~ label {
     transform: translateY(-3rem);
